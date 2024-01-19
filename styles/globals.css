@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+
 }
 
 body {
@@ -765,7 +765,7 @@ input {
 }
 
 
-/* plan page */
+/* plan page 
 
 .activeChosenPremium {
     @apply flex mx-auto max-w-[680px] gap-6 p-6 bg-[#f1f6f4] border-4 rounded cursor-pointer border-[#2be080];
@@ -774,8 +774,8 @@ input {
 .chosenPremium {
     @apply flex mx-auto max-w-[680px] gap-6 p-6 bg-[#f1f6f4] border-4 rounded cursor-pointer border-[#bac8ce];
 }
-
-/* Accordion */
+*/
+/* Accordion 
 
 .accordion__card {
     @apply border-b border-[#ddd] overflow-hidden
@@ -804,3 +804,4 @@ input {
 .collapse {
     @apply relative overflow-hidden h-0 duration-300 ease-out
 }
+*/
