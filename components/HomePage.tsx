@@ -4,10 +4,15 @@ import { BiCrown } from "react-icons/bi";
 import { RiLeafLine } from "react-icons/ri";
 
 
+
+
 export default function HomePage() {
+
+
+
     return (
         <div className="body">
-            {/*<AuthModal /> */}
+
             <nav className="nav">
                 <div className="nav__wrapper">
                     <figure className="nav__img--mask">
