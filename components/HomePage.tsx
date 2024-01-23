@@ -2,6 +2,7 @@ import { AiFillFileText, AiFillAudio, AiFillBulb } from "react-icons/ai";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { BiCrown } from "react-icons/bi";
 import { RiLeafLine } from "react-icons/ri";
+import LoginModal from "./modal/LoginModal";
 
 
 export default function HomePage() {
@@ -42,12 +43,7 @@ export default function HomePage() {
                                     <br className="remove--tablet" />
                                     and even people who dont like to read.
                                 </div>
-                                <button
-                                    className="btn home__cta--btn"
-
-                                >
-                                    Login
-                                </button>
+                                <LoginModal />
                             </div>
                             <figure className="landing__image--mask">
                                 <img src="landing.png" alt="landing" />
