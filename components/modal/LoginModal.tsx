@@ -3,13 +3,14 @@ import { useState } from "react"
 
 export default function LoginModal() {
 
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
     const handleClose = () => setIsOpen(false)
+    const handleOpen = () => setIsOpen(true)
     return (
         <>
             <button
                 className="btn home__cta--btn"
-
+                onClick={handleOpen}
             >
                 Login
             </button>
