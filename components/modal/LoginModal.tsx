@@ -20,9 +20,9 @@ export default function LoginModal() {
             >
                 <div className="w-[400px] h-[400px] bg-black">
                     <h2 className="text-white">Log in to Summarist</h2>
-                    <h3>Login as Guest</h3>
-                    <h3>or</h3>
-                    <h3>Login with Google</h3>
+                    <h3 className="text-white">Login as Guest</h3>
+                    <h3 className="text-white">or</h3>
+                    <h3 className="text-white">Login with Google</h3>
                 </div>
 
             </Modal>
