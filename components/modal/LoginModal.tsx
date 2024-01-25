@@ -30,7 +30,7 @@ export default function LoginModal() {
 
                     <div className="w-[70%] mt-8 flex flex-col" >
 
-                        <h1 className="text-center mt-4 mb-4 font-bold text-2xl">Sign into Summarist</h1>
+                        <h1 className="text-center mt-4 mb-4 font-bold text-[#032b41] text-2xl">Sign Into Summarist</h1>
                         <button className="relative w-full flex bg-[#3a579d] text-white 
                   justify-center items-center min-w-[180px] h-12 rounded text-base transition 
                   duration-200 hover:bg-[#25396b] mt-4 mb-4"
