@@ -23,16 +23,16 @@ export default function LoginModal() {
                 className="fixed top-0 left-0 h-full flex justify-center 
                 items-center flex-col w-full bg-[rgba(0,0,0,0.5)]">
 
-                <div className="w-[90%] h-[600px] bg-white md:w-[560px]
+                <div className="w-[60%] h-[400px] bg-white md:w-[560px]
                 md:h-[600px] border border-blue-500 rounded-lg
                 flex justify-center">
 
 
-                    <div className="w-[90%] mt-8 flex flex-col" >
+                    <div className="w-[70%] mt-8 flex flex-col" >
 
                         <h1 className="text-center mt-4 mb-4 font-bold text-2xl">Sign into Summarist</h1>
                         <button className="relative w-full flex bg-[#3a579d] text-white 
-                  justify-center items-center min-w-[180px] h-10 rounded text-base transition 
+                  justify-center items-center min-w-[180px] h-12 rounded text-base transition 
                   duration-200 hover:bg-[#25396b] mt-4 mb-4"
 
                         >
@@ -50,7 +50,7 @@ export default function LoginModal() {
                             </span>
                         </div>
                         <button className="relative w-full flex bg-[#4285f4] text-white 
-                justify-center items-center min-w-[180px] h-10 rounded text-base transition 
+                justify-center items-center min-w-[180px] h-12 rounded text-base transition 
                 duration-200 hover:bg-[#3367d6] mb-4"
 
                         >
@@ -68,12 +68,12 @@ export default function LoginModal() {
                         </button>
                         <input
                             placeholder="Email"
-                            className="h-10 mt-4 rounded-md bg-transparent border border-black p-6"
+                            className="h-10 mt-2 rounded-md bg-transparent border border-black p-6"
                             type={"email"}
                         />
                         <input
                             placeholder="Password"
-                            className="h-10 mt-4 rounded-md bg-transparent border border-black p-6"
+                            className="h-10 mt-3 rounded-md bg-transparent border border-black p-6"
                             type={"password"}
                         />
 
