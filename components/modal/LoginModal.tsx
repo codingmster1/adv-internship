@@ -7,6 +7,10 @@ export default function LoginModal() {
     const [isOpen, setIsOpen] = useState(false)
     const handleClose = () => setIsOpen(false)
     const handleOpen = () => setIsOpen(true)
+
+
+
+
     return (
         <>
             <button
@@ -83,6 +87,22 @@ export default function LoginModal() {
 
                         >
                             Login
+                        </button>
+
+                        <button
+                            className="hover:bg-[#e1e9e8] h-10 text-center bg-[#f1f6f4]
+             text-[#116be9] w-full rounded-b mt-4"
+
+                        >
+                            Forgot your password?
+                        </button>
+
+                        <button
+                            className="hover:bg-[#e1e9e8] h-10 text-center bg-[#f1f6f4]
+             text-[#116be9] w-full rounded-b mt-4"
+
+                        >
+                            Don't have an account?
                         </button>
 
 
