@@ -44,7 +44,11 @@ export default function LoginModal() {
                             </figure>
                             Sign in as Guest
                         </button>
-                        <h1 className="text-center font-bold mb-4 text-lg">or</h1>
+                        <div className="flex items-center mb-4 auth__separator">
+                            <span className="mx-6 text-sm text-[#394547] font-medium">
+                                or
+                            </span>
+                        </div>
                         <button className="relative w-full flex bg-[#4285f4] text-white 
                 justify-center items-center min-w-[180px] h-10 rounded text-base transition 
                 duration-200 hover:bg-[#3367d6] mb-4"
