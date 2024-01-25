@@ -1,5 +1,6 @@
 import Modal from "@mui/material/Modal"
 import { useState } from "react"
+import { BiSolidUser } from "react-icons/bi"
 
 export default function LoginModal() {
 
@@ -20,38 +21,72 @@ export default function LoginModal() {
                 open={isOpen}
                 onClose={handleClose}
                 className="fixed top-0 left-0 h-full flex justify-center 
-                items-center flex-col w-full bg-[rgba(0,0,0,0.5)]"
-            >
+                items-center flex-col w-full bg-[rgba(0,0,0,0.5)]">
 
-                <div>
-                    <div className="pt-12 px-8 pb-6">
-                        <h2 className="text-center font-bold text-[#032b41] text-xl mb-6">Log in to Summarist</h2>
+                <div className="w-[90%] h-[600px] bg-white md:w-[560px]
+                md:h-[600px] border border-blue-500 rounded-lg
+                flex justify-center">
+
+
+                    <div className="w-[90%] mt-8 flex flex-col" >
+
+                        <h1 className="text-center mt-4 mb-4 font-bold text-2xl">Sign into Summarist</h1>
+                        <button className="relative w-full flex bg-[#3a579d] text-white 
+                  justify-center items-center min-w-[180px] h-10 rounded text-base transition 
+                  duration-200 hover:bg-[#25396b] mt-4 mb-4"
+
+                        >
+                            <figure
+                                className="bg-transparent flex justify-center items-center w-9 
+                    h-9 absolute left-[2px] icon--scaled"
+                            >
+                                <BiSolidUser />
+                            </figure>
+                            Sign in as Guest
+                        </button>
+                        <h1 className="text-center font-bold mb-4 text-lg">or</h1>
+                        <button className="relative w-full flex bg-[#4285f4] text-white 
+                justify-center items-center min-w-[180px] h-10 rounded text-base transition 
+                duration-200 hover:bg-[#3367d6] mb-4"
+
+                        >
+                            <figure
+                                className="bg-transparent flex justify-center items-center w-9 
+                      h-9 absolute left-[2px] rounded bg-white"
+                            >
+                                <img
+                                    className="h-6 w-6"
+                                    src="../google.png"
+                                    alt="google.png"
+                                />
+                            </figure>
+                            Login with Google
+                        </button>
+                        <input
+                            placeholder="Email"
+                            className="h-10 mt-4 rounded-md bg-transparent border border-black p-6"
+                            type={"email"}
+                        />
+                        <input
+                            placeholder="Password"
+                            className="h-10 mt-4 rounded-md bg-transparent border border-black p-6"
+                            type={"password"}
+                        />
+
+                        <button className="bg-[#2bd97c] text-#032b41] w-full h-10 rounded 
+                text-base transition duration-200 hover:bg-[#20ba68] flex 
+                justify-center items-center min-w-[180px] mt-4"
+
+                        >
+                            Login
+                        </button>
+
+
                     </div>
-                    <h3
-                        className="relative w-full flex bg-[#3a579d] text-white 
-                      justify-center items-center min-w-[180px] h-10 rounded text-base transition 
-                      duration-200 hover:bg-[#25396b]"
-                    >Login as Guest</h3>
-                    <h3>or</h3>
-                    <h3>Login with Google</h3>
-                    <input
-                        type="text"
-                        className="h-10 border-2 text-[#394547] border-[#bac8ce] 
-                     focus:border-[#2bd97c] rounded px-4"
-                        placeholder="Email Address" />
-                    <input
-                        className="h-10 border-2 border-[#bac8ce] rounded 
-                    text-[#394547] focus:border-[#2bd97c] p-3"
-                        type="password"
-                        placeholder="Password" />
-                    <button>Login</button>
-                    <button>Forgot your password</button>
-                    <button>Don't have an account </button>
                 </div>
 
-
             </Modal>
-        </>
 
+        </>
     )
 }
