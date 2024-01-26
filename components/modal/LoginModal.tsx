@@ -1,6 +1,7 @@
 import Modal from "@mui/material/Modal"
 import { useState } from "react"
 import { BiSolidUser } from "react-icons/bi"
+import { FiX } from "react-icons/fi";
 
 export default function LoginModal() {
 
@@ -28,22 +29,29 @@ export default function LoginModal() {
                 items-center flex-col w-full bg-[rgba(0,0,0,0.5)]">
 
                 <div className="w-[60%] h-[400px] bg-white md:w-[560px]
-                md:h-[600px] border border-blue-500 rounded-lg
+                md:h-[600px] rounded-lg
                 flex justify-center">
 
 
                     <div className="w-[70%] mt-8 flex flex-col" >
 
-                        <h1 className="text-center mt-4 mb-4 font-bold text-[#032b41] text-2xl">Sign Into Summarist</h1>
+
+                        <h1 className="text-center mt-4 mb-4 font-bold text-[#032b41] text-2xl">Sign Into Summarist
+
+                        </h1>
+
+
                         <button className="relative w-full flex bg-[#3a579d] text-white 
                   justify-center items-center min-w-[180px] h-12 rounded text-base transition 
                   duration-200 hover:bg-[#25396b] mt-4 mb-4"
 
                         >
+
                             <figure
                                 className="bg-transparent flex justify-center items-center w-9 
                     h-9 absolute left-[2px] icon--scaled"
                             >
+
                                 <BiSolidUser />
                             </figure>
                             Sign in as Guest
