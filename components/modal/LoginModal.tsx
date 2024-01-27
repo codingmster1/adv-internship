@@ -1,4 +1,4 @@
-import { openLoginModal } from "@/redux/modalSlice";
+import { closeLoginModal, openLoginModal } from "@/redux/modalSlice";
 import Modal from "@mui/material/Modal"
 import { useState } from "react"
 import { BiSolidUser } from "react-icons/bi"
@@ -28,16 +28,16 @@ export default function LoginModal() {
 
             <Modal
                 open={isOpen}
-                onClose={handleClose}
+                onClose={() => dispatch(closeLoginModal())}
                 className="fixed top-0 left-0 h-full flex justify-center 
                 items-center flex-col w-full bg-[rgba(0,0,0,0.5)]">
 
-                <div className="w-[60%] h-[400px] bg-white md:w-[560px]
+                <div className="w-[80%] bg-white md:w-[560px]
                 md:h-[600px] rounded-lg
                 flex justify-center">
 
 
-                    <div className="w-[70%] mt-8 flex flex-col" >
+                    <div className="w-[70%]  mt-8 flex flex-col" >
 
 
                         <h1 className="text-center mt-4 mb-4 font-bold text-[#032b41] text-2xl">Sign Into Summarist
@@ -45,7 +45,7 @@ export default function LoginModal() {
                         </h1>
 
 
-                        <button className="relative w-full flex bg-[#3a579d] text-white 
+                        <button className="relative w-full flex bg-[#4285f4] text-white 
                   justify-center items-center min-w-[180px] h-12 rounded text-base transition 
                   duration-200 hover:bg-[#25396b] mt-4 mb-4"
 
@@ -65,23 +65,7 @@ export default function LoginModal() {
                                 or
                             </span>
                         </div>
-                        <button className="relative w-full flex bg-[#4285f4] text-white 
-                justify-center items-center min-w-[180px] h-12 rounded text-base transition 
-                duration-200 hover:bg-[#3367d6] mb-4"
 
-                        >
-                            <figure
-                                className="bg-transparent flex justify-center items-center w-9 
-                      h-9 absolute left-[2px] rounded bg-white"
-                            >
-                                <img
-                                    className="h-6 w-6"
-                                    src="../google.png"
-                                    alt="google.png"
-                                />
-                            </figure>
-                            Login with Google
-                        </button>
                         <input
                             placeholder="Email"
                             className="h-10 mt-2 rounded-md bg-transparent border border-[#bac8ce] p-6"
@@ -103,15 +87,7 @@ export default function LoginModal() {
 
                         <button
                             className="hover:bg-[#e1e9e8] h-10 text-center bg-[#f1f6f4]
-             text-[#116be9] w-full rounded-b mt-4"
-
-                        >
-                            Forgot your password?
-                        </button>
-
-                        <button
-                            className="hover:bg-[#e1e9e8] h-10 text-center bg-[#f1f6f4]
-             text-[#116be9] w-full rounded-b mt-4"
+             text-[#116be9] w-full rounded-b mb-2 mt-4"
 
                         >
                             Don't have an account?
