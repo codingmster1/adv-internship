@@ -1,14 +1,14 @@
-import { closeLoginModal, openLoginModal } from "@/redux/modalSlice";
+import { closeSignupModal, openSignupModal } from "@/redux/modalSlice";
 import Modal from "@mui/material/Modal"
 import { useState } from "react"
 import { BiSolidUser } from "react-icons/bi"
 import { FiX } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function LoginModal() {
+export default function SignupModal() {
 
 
-    const isOpen = useSelector((state: any) => state.modal.loginModal)
+    const isOpen = useSelector((state: any) => state.modal.SignupModal)
     const dispatch = useDispatch()
     console.log(isOpen)
 
@@ -19,14 +19,14 @@ export default function LoginModal() {
 
             <button
                 className="btn home__cta--btn"
-                onClick={() => dispatch(openLoginModal())}
+                onClick={() => dispatch(openSignupModal())}
             >
                 Login
             </button>
 
             <Modal
                 open={isOpen}
-                onClose={() => dispatch(closeLoginModal())}
+                onClose={() => dispatch(closeSignupModal())}
                 className="fixed top-0 left-0 h-full flex justify-center 
                 items-center flex-col w-full bg-[rgba(0,0,0,0.5)]">
 
