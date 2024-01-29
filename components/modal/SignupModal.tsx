@@ -1,4 +1,4 @@
-import { closeSignupModal, openSignupModal } from "@/redux/modalSlice";
+import { closeSignupModal, openLoginModal, openSignupModal } from "@/redux/modalSlice";
 import Modal from "@mui/material/Modal"
 import { useState } from "react"
 import { BiSolidUser } from "react-icons/bi"
@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 export default function SignupModal() {
 
 
-    const isOpen = useSelector((state: any) => state.modal.SignupModal)
+    const isOpen = useSelector((state: any) => state.modal.signupModal)
     const dispatch = useDispatch()
     console.log(isOpen)
 
@@ -17,12 +17,7 @@ export default function SignupModal() {
         <>
 
 
-            <button
-                className="btn home__cta--btn"
-                onClick={() => dispatch(openSignupModal())}
-            >
-                Login
-            </button>
+
 
             <Modal
                 open={isOpen}
@@ -38,31 +33,9 @@ export default function SignupModal() {
                     <div className="w-[70%]  mt-8 flex flex-col" >
 
 
-                        <h1 className="text-center mt-4 mb-4 font-bold text-[#032b41] text-2xl">Sign Into Summarist
+                        <h1 className="text-center mt-4 mb-4 font-bold text-[#032b41] text-2xl">Create an account
 
                         </h1>
-
-
-                        <button className="relative w-full flex bg-[#4285f4] text-white 
-                  justify-center items-center min-w-[180px] h-12 rounded text-base transition 
-                  duration-200 hover:bg-[#25396b] mt-4 mb-4"
-
-                        >
-
-                            <figure
-                                className="bg-transparent flex justify-center items-center w-9 
-                    h-9 absolute left-[2px] icon--scaled"
-                            >
-
-                                <BiSolidUser />
-                            </figure>
-                            Sign in as Guest
-                        </button>
-                        <div className="flex items-center mb-4 auth__separator">
-                            <span className="mx-6 text-sm text-[#394547] font-medium">
-                                or
-                            </span>
-                        </div>
 
                         <input
                             placeholder="Email"
@@ -80,15 +53,15 @@ export default function SignupModal() {
                 justify-center items-center min-w-[180px] mt-4"
 
                         >
-                            Login
+                            Sign up
                         </button>
 
                         <button
                             className="hover:bg-[#e1e9e8] h-10 text-center bg-[#f1f6f4]
              text-[#116be9] w-full rounded-b mb-2 mt-4"
-
+                            onClick={() => dispatch(openLoginModal())}
                         >
-                            Don't have an account?
+                            Already have an account?
                         </button>
 
 

@@ -3,9 +3,14 @@ import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { BiCrown } from "react-icons/bi";
 import { RiLeafLine } from "react-icons/ri";
 import LoginModal from "./modal/LoginModal";
+import { openLoginModal } from "@/redux/modalSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 
 export default function HomePage() {
+    const isOpen = useSelector((state: any) => state.modal.loginModal)
+    const dispatch = useDispatch()
+    console.log(isOpen)
     return (
         <div className="body">
 
@@ -18,7 +23,7 @@ export default function HomePage() {
                     <ul className="nav__list--wrapper">
                         <li
                             className="nav__list nav__list--login"
-
+                            onClick={() => dispatch(openLoginModal())}
                         >
                             Login
 
@@ -290,7 +295,9 @@ export default function HomePage() {
                             </div>
                         </div>
                         <div className="reviews__btn--wrapper">
-                            <button className="btn home__cta--btn">Login</button>
+                            <button className="btn home__cta--btn"
+                                onClick={() => dispatch(openLoginModal())}
+                            >Login</button>
                         </div>
                     </div>
                 </div>
