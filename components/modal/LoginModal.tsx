@@ -86,7 +86,13 @@ export default function LoginModal() {
                         <button
                             className="hover:bg-[#e1e9e8] h-10 text-center bg-[#f1f6f4]
              text-[#116be9] w-full rounded-b mb-2 mt-4"
-                            onClick={() => dispatch(openSignupModal())}
+
+                            onClick={() => {
+                                dispatch(closeLoginModal())
+                                dispatch(openSignupModal())
+                            }
+
+                            }
                         >
                             Don't have an account?
                         </button>
