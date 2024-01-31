@@ -18,10 +18,10 @@ export default function SignupModal() {
             <Modal
                 open={isOpen}
                 onClose={() => dispatch(closeSignupModal())}
-                className="fixed top-0 left-0 h-full flex justify-center 
+                className="fixed top-0 left-0 mt-8  h-[80%] flex justify-center 
                 items-center flex-col w-full bg-[rgba(0,0,0,0.5)]">
 
-                <div className="w-[80%] bg-white md:w-[560px]
+                <div className=" bg-white md:w-[560px]
                 md:h-[600px] rounded-lg
                 flex justify-center">
 

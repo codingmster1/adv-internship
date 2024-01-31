@@ -23,7 +23,7 @@ export default function LoginModal() {
             <Modal
                 open={isOpen}
                 onClose={() => dispatch(closeLoginModal())}
-                className="fixed top-0 left-0 h-full flex justify-center 
+                className="fixed top-0 left-0 mt-8  h-[80%] flex justify-center 
                 items-center flex-col w-full bg-[rgba(0,0,0,0.5)]">
 
                 <div className="w-[80%] bg-white md:w-[560px]
@@ -81,7 +81,7 @@ export default function LoginModal() {
 
                         <button
                             className="hover:bg-[#e1e9e8] h-10 text-center bg-[#f1f6f4]
-             text-[#116be9] w-full rounded-b mb-2 mt-4"
+             text-[#116be9] w-full rounded-b mb-4 mt-4"
 
                             onClick={() => {
                                 dispatch(closeLoginModal())
