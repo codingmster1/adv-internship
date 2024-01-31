@@ -35,12 +35,12 @@ export default function SignupModal() {
 
                         <input
                             placeholder="Email"
-                            className="h-10 mt-2 rounded-md bg-transparent border border-[#bac8ce] p-6"
+                            className="h-10 mt-2 rounded px-4 bg-transparent border-2 focus:border-[#2bd97c] border-[#bac8ce] p-6"
                             type={"email"}
                         />
                         <input
                             placeholder="Password"
-                            className="h-10 mt-3 rounded-md bg-transparent border border-[#bac8ce] p-6"
+                            className="h-10 mt-3 rounded px-4 bg-transparent border-2 focus:border-[#2bd97c] border-[#bac8ce] p-6"
                             type={"password"}
                         />
 
