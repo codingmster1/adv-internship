@@ -4,13 +4,25 @@ import { useState } from "react"
 import { BiSolidUser } from "react-icons/bi"
 import { FiX } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignupModal() {
 
 
     const isOpen = useSelector((state: any) => state.modal.signupModal)
     const dispatch = useDispatch()
-    console.log(isOpen)
+    //console.log(isOpen)
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    async function handleSignUp() {
+        const userCredentials = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+        )
+    }
 
 
     return (
@@ -37,17 +49,19 @@ export default function SignupModal() {
                             placeholder="Email"
                             className="h-10 mt-2 rounded px-4 bg-transparent border-2 focus:border-[#2bd97c] border-[#bac8ce] p-6"
                             type={"email"}
+                            onChange={e => setEmail(e.target.value)}
                         />
                         <input
                             placeholder="Password"
                             className="h-10 mt-3 rounded px-4 bg-transparent border-2 focus:border-[#2bd97c] border-[#bac8ce] p-6"
                             type={"password"}
+                            onChange={e => setPassword(e.target.value)}
                         />
 
                         <button className="bg-[#2bd97c] text-#032b41] w-full h-10 rounded 
                 text-base transition duration-200 hover:bg-[#20ba68] flex 
                 justify-center items-center min-w-[180px] mt-4"
-
+                            onClick={handleSignUp}
                         >
                             Sign up
                         </button>
