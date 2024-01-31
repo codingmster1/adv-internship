@@ -4,6 +4,7 @@ import { useState } from "react"
 import { BiSolidUser } from "react-icons/bi"
 import { FiX } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
+import SignupModal from "./SignupModal";
 
 export default function LoginModal() {
 
@@ -17,12 +18,7 @@ export default function LoginModal() {
         <>
 
 
-            <button
-                className="btn home__cta--btn"
-                onClick={() => dispatch(openLoginModal())}
-            >
-                Login
-            </button>
+
 
             <Modal
                 open={isOpen}
@@ -102,7 +98,7 @@ export default function LoginModal() {
                 </div>
 
             </Modal>
-
+            <SignupModal />
         </>
     )
 }

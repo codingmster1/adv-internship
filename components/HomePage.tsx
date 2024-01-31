@@ -50,6 +50,12 @@ export default function HomePage() {
                                     <br className="remove--tablet" />
                                     and even people who dont like to read.
                                 </div>
+                                <button
+                                    className="btn home__cta--btn"
+                                    onClick={() => dispatch(openLoginModal())}
+                                >
+                                    Login
+                                </button>
                                 <LoginModal />
                             </div>
                             <figure className="landing__image--mask">
