@@ -1,5 +1,7 @@
+import { auth } from "@/firebase";
 import { closeLoginModal, openLoginModal, openSignupModal } from "@/redux/modalSlice";
 import Modal from "@mui/material/Modal"
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react"
 import { BiSolidUser } from "react-icons/bi"
 import { FiX } from "react-icons/fi";
@@ -7,19 +9,22 @@ import { useDispatch, useSelector } from "react-redux";
 import SignupModal from "./SignupModal";
 
 export default function LoginModal() {
-
-
     const isOpen = useSelector((state: any) => state.modal.loginModal)
     const dispatch = useDispatch()
-    console.log(isOpen)
+    //console.log(isOpen)
+
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+
+    async function handleSignIn() {
+        await signInWithEmailAndPassword(auth, email, password)
+    }
 
 
     return (
         <>
-
-
-
-
             <Modal
                 open={isOpen}
                 onClose={() => dispatch(closeLoginModal())}
@@ -64,18 +69,21 @@ export default function LoginModal() {
                             placeholder="Email"
                             className="h-10 mt-2 rounded px-4 bg-transparent focus:border-[#2bd97c] border-2 border-[#bac8ce] p-6"
                             type={"email"}
+                            onChange={e => setEmail(e.target.value)}
                         />
                         <input
                             placeholder="Password"
                             className="h-10 mt-3 rounded px-4 bg-transparent focus:border-[#2bd97c] border-2 border-[#bac8ce] p-6"
                             type={"password"}
+                            onChange={e => setPassword(e.target.value)}
                         />
 
                         <button className="bg-[#2bd97c] text-#032b41] w-full h-10 rounded 
                 text-base transition duration-200 hover:bg-[#20ba68] flex 
                 justify-center items-center min-w-[180px] mt-4"
-
+                            onClick={handleSignIn}
                         >
+
                             Login
                         </button>
 

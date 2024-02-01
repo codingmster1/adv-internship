@@ -6,6 +6,7 @@ import { FiX } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebase";
+import { setUser } from "@/redux/userSlice";
 
 export default function SignupModal() {
 
@@ -29,6 +30,12 @@ export default function SignupModal() {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             if (!currentUser) return
             console.log(currentUser)
+            dispatch(setUser(
+                {
+                    email: currentUser.email,
+                    uid: currentUser.uid
+                }
+            ))
 
         })
 
