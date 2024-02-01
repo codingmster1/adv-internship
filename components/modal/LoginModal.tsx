@@ -20,6 +20,12 @@ export default function LoginModal() {
 
     async function handleSignIn() {
         await signInWithEmailAndPassword(auth, email, password)
+        dispatch(closeLoginModal())
+    }
+
+    async function handleGuestSignIn() {
+        await signInWithEmailAndPassword(auth, "guest0987@gmail.com", "1234567")
+        dispatch(closeLoginModal())
     }
 
 
@@ -47,12 +53,13 @@ export default function LoginModal() {
                         <button className="relative w-full flex bg-[#4285f4] text-white 
                   justify-center items-center min-w-[180px] h-12 rounded text-base transition 
                   duration-200 hover:bg-[#25396b] mt-4 mb-4"
-
+                            onClick={handleGuestSignIn}
                         >
 
                             <figure
                                 className="bg-transparent flex justify-center items-center w-9 
                     h-9 absolute left-[2px] icon--scaled"
+
                             >
 
                                 <BiSolidUser />

@@ -24,6 +24,7 @@ export default function SignupModal() {
             email,
             password
         )
+        dispatch(closeSignupModal())
     }
 
     useEffect(() => {
@@ -81,6 +82,8 @@ export default function SignupModal() {
                 text-base transition duration-200 hover:bg-[#20ba68] flex 
                 justify-center items-center min-w-[180px] mt-4"
                             onClick={handleSignUp}
+
+
                         >
                             Sign up
                         </button>
