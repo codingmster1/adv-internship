@@ -1,13 +1,17 @@
+import SearchBar from "@/components/SearchBar"
+
 export default function Foryou() {
     return (
         <div
             className="md:relative md:flex md:flex-col md:ml-[200px] max-[768px]:ml-0 
         max-[768px]:w-full transition-all duration-300"
         >
-
+            <SearchBar />
             <div className="max-w-[1100px] w-full px-6 mx-auto">
                 <div className="py-6 w-full">
-
+                    <div className="text-[22px] mb-4 text-[#032b41] font-bold">
+                        Selected just for you
+                    </div>
 
                     <div className="text-[22px] mb-4 text-[#032b41] font-bold">
                         Recommended For You
