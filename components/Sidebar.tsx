@@ -1,7 +1,8 @@
 import logo from "../public/logo.png";
 import Image from "next/image";
-import { AiOutlineHome, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineQuestionCircle, AiOutlineSearch, AiOutlineSetting } from "react-icons/ai";
 import { BsBookmark, BsPen } from "react-icons/bs";
+import { BiLogOut } from "react-icons/bi";
 
 export default function Sidebar() {
     return (
@@ -53,7 +54,39 @@ export default function Sidebar() {
                     <div>Search</div>
                 </a>
             </div>
-        </div>
+            <div>
+                <a className="flex items-center h-14 text-[#032b41] mb-2 cursor-pointer hover:bg-[#f0efef] ">
+                    <div className="bg-transparent w-[5px] h-full mr-4" />
+                    <div className="icon--scaled flex items-center justify-center mr-2">
+
+                        <AiOutlineSetting />
+                    </div>
+                    <div >Settings</div>
+                </a>
+            </div>
+            <div>
+
+                <a className="flex items-center h-14 text-[#032b41] mb-2 cursor-not-allowed">
+                    <div className="bg-transparent w-[5px] h-full mr-4" />
+                    <div className="icon--scaled flex items-center justify-center mr-2">
+                        <AiOutlineQuestionCircle />
+                    </div>
+                    <div>Help & Support</div>
+                </a>
+                <div
+                    className="flex items-center h-14 text-[#032b41] mb-2 cursor-pointer
+           hover:bg-[#f0efef]"
+                //onClick={handleSignOut}
+                >
+                    <div className="bg-transparent w-[5px] h-full mr-4" />
+                    <div className="icon--scaled flex items-center justify-center mr-2">
+                        <BiLogOut />
+                    </div>
+                    <div>Logout</div>
+                </div>
+            </div >
+        </div >
+
 
     )
 }
