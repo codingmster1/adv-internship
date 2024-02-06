@@ -1,4 +1,5 @@
 import SearchBar from "@/components/SearchBar"
+import Sidebar from "@/components/Sidebar"
 
 export default function Foryou() {
     return (
@@ -6,6 +7,7 @@ export default function Foryou() {
             className="md:relative md:flex md:flex-col md:ml-[200px] max-[768px]:ml-0 
         max-[768px]:w-full transition-all duration-300"
         >
+            <Sidebar />
             <SearchBar />
             <div className="max-w-[1100px] w-full px-6 mx-auto">
                 <div className="py-6 w-full">
