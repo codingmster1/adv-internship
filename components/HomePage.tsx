@@ -5,12 +5,18 @@ import { RiLeafLine } from "react-icons/ri";
 import LoginModal from "./modal/LoginModal";
 import { openLoginModal } from "@/redux/modalSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import Link from "next/link";
+
 
 
 export default function HomePage() {
     const isOpen = useSelector((state: any) => state.modal.loginModal)
     const dispatch = useDispatch()
-    console.log(isOpen)
+    //console.log(isOpen)
+    const router = useRouter();
+
     return (
         <div className="body">
 
