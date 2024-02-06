@@ -1,4 +1,4 @@
-import React from 'react'
+{/*import React from 'react'
 import { useRouter } from "next/router";
 
 export default function Users() {
@@ -8,4 +8,4 @@ export default function Users() {
     )
 }
 
-export default Users
+export default Users*/}
