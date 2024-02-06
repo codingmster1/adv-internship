@@ -26,7 +26,7 @@ export default function SearchBar() {
                             />
                             <div
                                 className="flex items-center absolute h-full right-2 justify-end 
-                    border-l-2 border-[#e1e7ea] pl-2 icon--scaled"
+                    border-l-2 border-[#e1e7ea] pl-2 icon--scaled cursor-pointer"
 
                             >
                                 <BiSearch />
