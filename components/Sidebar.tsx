@@ -1,7 +1,7 @@
 import logo from "../public/logo.png";
 import Image from "next/image";
-import { AiOutlineHome } from "react-icons/ai";
-import { BsBookmark } from "react-icons/bs";
+import { AiOutlineHome, AiOutlineSearch } from "react-icons/ai";
+import { BsBookmark, BsPen } from "react-icons/bs";
 
 export default function Sidebar() {
     return (
@@ -21,7 +21,7 @@ export default function Sidebar() {
           mb-2 cursor-pointer"
 
                 >
-
+                    <div className="bg-transparent w-[5px] h-full mr-4" />
                     <div className="icon--scaled flex items-center justify-center mr-2">
                         <AiOutlineHome />
                     </div>
@@ -32,13 +32,28 @@ export default function Sidebar() {
           mb-2 cursor-pointer"
 
                 >
-
+                    <div className="bg-transparent w-[5px] h-full mr-4" />
                     <div className="icon--scaled flex items-center justify-center mr-2">
                         <BsBookmark />
                     </div>
                     <div>My Library</div>
                 </a>
+                <a className="flex items-center h-14 text-[#032b41] mb-2 cursor-not-allowed">
+                    <div className="bg-transparent w-[5px] h-full mr-4" />
+                    <div className="icon--scaled flex items-center justify-center mr-2">
+                        <BsPen />
+                    </div>
+                    <div>Highlights</div>
+                </a>
+                <a className="flex items-center h-14 text-[#032b41] mb-2 cursor-not-allowed">
+                    <div className="bg-transparent w-[5px] h-full mr-4" />
+                    <div className="icon--scaled flex items-center justify-center mr-2">
+                        <AiOutlineSearch />
+                    </div>
+                    <div>Search</div>
+                </a>
             </div>
         </div>
+
     )
 }
