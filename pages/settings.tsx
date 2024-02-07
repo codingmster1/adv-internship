@@ -64,7 +64,7 @@ export default function Settings() {
                                     </div>
 
                                     {/*{premium ? (*/}
-                                    <div className="text-[#032b41]">name{/*premiumStatusName*/}</div>
+                                    <div className="text-[#032b41]">{/*premiumStatusName*/}</div>
                                     {/*  ) : (*/}
                                     <>
                                         <div className="text-[#032b41]">Basic</div>
