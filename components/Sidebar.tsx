@@ -51,7 +51,7 @@ export default function Sidebar() {
                 <a
                     className="flex items-center h-14 text-[#032b41] hover:bg-[#f0efef] 
           mb-2 cursor-pointer"
-
+                    onClick={() => router.push("/library")}
                 >
                     <div className="bg-transparent w-[5px] h-full mr-4" />
                     <div className="icon--scaled flex items-center justify-center mr-2">
