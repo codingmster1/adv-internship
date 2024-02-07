@@ -3,8 +3,27 @@ import Image from "next/image";
 import { AiOutlineHome, AiOutlineQuestionCircle, AiOutlineSearch, AiOutlineSetting } from "react-icons/ai";
 import { BsBookmark, BsPen } from "react-icons/bs";
 import { BiLogOut } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { auth } from "@/firebase";
+import { signoutUser } from "@/redux/userSlice";
+import { signOut } from "firebase/auth";
+import { useRouter } from "next/router";
+import { openLoginModal } from "@/redux/modalSlice";
 
 export default function Sidebar() {
+
+    const router = useRouter();
+    const user = useSelector((state: any) => state.user);
+    const dispatch = useDispatch()
+
+    async function handleSignOut() {
+
+        await signOut(auth)
+        dispatch(signoutUser())
+
+    }
+
+
     return (
         <div
             className="bg-[#f7faf9] md:inline md:w-[200px] md:min-w-[200px] fixed 
@@ -76,7 +95,7 @@ export default function Sidebar() {
                 <div
                     className="flex items-center h-14 text-[#032b41] mb-2 cursor-pointer
            hover:bg-[#f0efef]"
-                //onClick={handleSignOut}
+                    onClick={handleSignOut}
                 >
                     <div className="bg-transparent w-[5px] h-full mr-4" />
                     <div className="icon--scaled flex items-center justify-center mr-2">

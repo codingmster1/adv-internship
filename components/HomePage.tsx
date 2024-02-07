@@ -16,6 +16,16 @@ export default function HomePage() {
     const dispatch = useDispatch()
     //console.log(isOpen)
     const router = useRouter();
+    const user = useSelector((state: any) => state.user);
+
+    useEffect(() => {
+        if (user.email === null) {
+            return;
+        } else {
+            router.push("/forYou");
+        }
+    }, [user, router]);
+
 
     return (
         <div className="body">
