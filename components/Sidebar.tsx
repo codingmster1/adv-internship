@@ -20,6 +20,7 @@ export default function Sidebar() {
 
         await signOut(auth)
         dispatch(signoutUser())
+        router.push("/")
 
     }
 
