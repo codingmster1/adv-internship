@@ -1,6 +1,7 @@
 import LoginModal from "@/components/modal/LoginModal";
 import SearchBar from "@/components/SearchBar";
 import Sidebar from "@/components/Sidebar";
+import { openLoginModal } from "@/redux/modalSlice";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -9,6 +10,11 @@ export default function Settings() {
     const dispatch = useDispatch();
     const user = useSelector((state: any) => state.user);
     const router = useRouter();
+
+    function handleSignIn() {
+        dispatch(openLoginModal());
+    }
+
     return (
         <div className="relative flex flex-col md:ml-[200px]">
             <SearchBar />
