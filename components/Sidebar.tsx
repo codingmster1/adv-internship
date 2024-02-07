@@ -20,7 +20,7 @@ export default function Sidebar() {
 
         await signOut(auth)
         dispatch(signoutUser())
-        router.push("/")
+        router.push("/") //takes you back to homepage upon signout
 
     }
 
@@ -75,7 +75,9 @@ export default function Sidebar() {
                 </a>
             </div>
             <div>
-                <a className="flex items-center h-14 text-[#032b41] mb-2 cursor-pointer hover:bg-[#f0efef] ">
+                <a className="flex items-center h-14 text-[#032b41] mb-2 cursor-pointer hover:bg-[#f0efef]"
+                    onClick={() => router.push("/settings")}
+                >
                     <div className="bg-transparent w-[5px] h-full mr-4" />
                     <div className="icon--scaled flex items-center justify-center mr-2">
 
