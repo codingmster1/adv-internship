@@ -6,7 +6,7 @@ import LoginModal from "./modal/LoginModal";
 import { openLoginModal } from "@/redux/modalSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 
@@ -17,6 +17,7 @@ export default function HomePage() {
     //console.log(isOpen)
     const router = useRouter();
     const user = useSelector((state: any) => state.user);
+    const [delay, setDelay] = useState<number>(1);
 
     useEffect(() => {
         if (user.email === null) {
@@ -26,6 +27,17 @@ export default function HomePage() {
         }
     }, [user, router]);
 
+    useEffect(() => {
+        const greenTextActive = () => {
+            setDelay((delay) => (delay + 1) % 6);
+        };
+
+        const timeoutId = setTimeout(greenTextActive, 2000);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, [delay]);
 
     return (
         <div className="body">
@@ -119,43 +131,48 @@ export default function HomePage() {
                         <div className="statistics__wrapper">
                             <div className="statistics__content--header">
                                 <div
-                                    className="statistics__heading 
-                    statistics__heading--active"
-
+                                    className={`statistics__heading ${delay === 0 && `statistics__heading--active`
+                                        }`}
                                 >
                                     Enhance your knowledge
                                 </div>
                                 <div
-                                    className="statistics__heading 
-                   statistics__heading--active"
+                                    className={`statistics__heading ${delay === 1 &&
+
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Achieve greater success
                                 </div>
                                 <div
-                                    className="statistics__heading 
-                    statistics__heading--active"
+                                    className={`statistics__heading ${delay === 2 &&
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Improve your health
                                 </div>
                                 <div
-                                    className="statistics__heading 
-                   statistics__heading--active"
+                                    className={`statistics__heading ${delay === 3 &&
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Develop better parenting skills
                                 </div>
                                 <div
-                                    className="statistics__heading 
-                    statistics__heading--active"
+                                    className={`statistics__heading ${delay === 4 &&
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Increase happiness
                                 </div>
                                 <div
-                                    className="statistics__heading 
-                    statistics__heading--active"
+                                    className={`statistics__heading ${delay === 5 &&
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Be the best version of yourself!
@@ -209,43 +226,49 @@ export default function HomePage() {
                             </div>
                             <div className="statistics__content--header statistics__content--header-second">
                                 <div
-                                    className="statistics__heading 
-                    statistics__heading--active"
+                                    className={`statistics__heading ${delay === 0 &&
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Expand your learning
                                 </div>
                                 <div
-                                    className="statistics__heading 
-                   statistics__heading--active"
+                                    className={`statistics__heading ${delay === 1 &&
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Accomplish your goals
                                 </div>
                                 <div
-                                    className="statistics__heading 
-                    statistics__heading--active"
+                                    className={`statistics__heading ${delay === 2 &&
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Strengthen your vitality
                                 </div>
                                 <div
-                                    className="statistics__heading 
-                   statistics__heading--active"
+                                    className={`statistics__heading ${delay === 3 &&
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Become a better caregiver
                                 </div>
                                 <div
-                                    className="statistics__heading 
-                    statistics__heading--active"
+                                    className={`statistics__heading ${delay === 4 &&
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Improve your mood
                                 </div>
                                 <div
-                                    className="statistics__heading 
-                    statistics__heading--active"
+                                    className={`statistics__heading ${delay === 5 &&
+                                        `statistics__heading--active`
+                                        }`}
 
                                 >
                                     Maximize your abilities
