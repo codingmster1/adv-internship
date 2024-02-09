@@ -2,6 +2,7 @@ import Recommended from "@/components/Recommended"
 import SearchBar from "@/components/SearchBar"
 import Selected from "@/components/Selected"
 import Sidebar from "@/components/Sidebar"
+import Suggested from "@/components/Suggested";
 
 export default function Foryou() {
     return (
@@ -29,7 +30,7 @@ export default function Foryou() {
                     <div className="font-light text-[#394547] mb-7">
                         Explore these books
                     </div>
-
+                    <Suggested />
                 </div>
             </div>
         </div>
