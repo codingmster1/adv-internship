@@ -1,3 +1,4 @@
+import Recommended from "@/components/Recommended"
 import SearchBar from "@/components/SearchBar"
 import Selected from "@/components/Selected"
 import Sidebar from "@/components/Sidebar"
@@ -20,7 +21,7 @@ export default function Foryou() {
                     <div className="font-light text-[#394547] mb-7">
                         We think you will like these
                     </div>
-
+                    <Recommended />
 
                     <div className="text-[22px] mb-4 text-[#032b41] font-bold">
                         Suggested Books
