@@ -1,4 +1,5 @@
 import SearchBar from "@/components/SearchBar"
+import Selected from "@/components/Selected"
 import Sidebar from "@/components/Sidebar"
 
 export default function Foryou() {
@@ -11,9 +12,7 @@ export default function Foryou() {
             <SearchBar />
             <div className="max-w-[1100px] w-full px-6 mx-auto">
                 <div className="py-6 w-full">
-                    <div className="text-[22px] mb-4 text-[#032b41] font-bold">
-                        Selected just for you
-                    </div>
+                    <Selected />
 
                     <div className="text-[22px] mb-4 text-[#032b41] font-bold">
                         Recommended For You
