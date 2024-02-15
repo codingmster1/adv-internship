@@ -3,20 +3,39 @@ import SearchBar from "@/components/SearchBar";
 import Sidebar from "@/components/Sidebar";
 import Skeleton from "@/components/ui/Skeleton";
 import { openLoginModal } from "@/redux/modalSlice";
+import { auth, initFirebase } from "@/firebase";
+import { getPremiumStatus } from "checkStatus";
+import { getPortalUrl } from "stripePayment";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Settings() {
     const [skelLoad, setSkelLoad] = useState<boolean>(false);
     const dispatch = useDispatch();
+    const [isPremium, setIsPremium] = useState(false);
     const user = useSelector((state: any) => state.user);
     const router = useRouter();
+    const app = initFirebase();
 
     function handleSignIn() {
         dispatch(openLoginModal());
     }
 
+    useEffect(() => {
+        const checkPremium = async () => {
+            const newPremiumStatus = auth.currentUser
+                ? await getPremiumStatus(app)
+                : false;
+            setIsPremium(newPremiumStatus);
+            console.log(newPremiumStatus);
+        };
+        checkPremium();
+    }, [auth.currentUser]);
+    const manageSubscription = async () => {
+        const portalUrl = await getPortalUrl(app);
+        router.push(portalUrl);
+    };
     return (
         <div className="relative flex flex-col md:ml-[200px]">
             <SearchBar />
@@ -65,21 +84,21 @@ export default function Settings() {
                                             Your Subscription plan
                                         </div>
 
-                                        {/*{premium ? (*/}
-                                        <div className="text-[#032b41]">{/*premiumStatusName*/}</div>
-                                        {/*  ) : (*/}
-
-                                        <div className="text-[#032b41]">Basic</div>
-                                        <button
-                                            className="flex items-center justify-center bg-[#2bd97c] 
+                                        {isPremium ? (
+                                            <div className="text-[#032b41]">Premium</div>
+                                        ) : (
+                                            <>
+                                                <div className="text-[#032b41]">Basic</div>
+                                                <button
+                                                    className="flex items-center justify-center bg-[#2bd97c] 
                         text-[#032b41] h-10 rounded text-base transition duration-200 
                         min-w-[180px] hover:bg-[#20ba68]"
-                                            onClick={() => router.push("/choose-plan")}
-                                        >
-                                            Upgrade to Premium
-                                        </button>
-
-
+                                                    onClick={() => router.push("/choose-plan")}
+                                                >
+                                                    Upgrade to Premium
+                                                </button>
+                                            </>
+                                        )}
                                     </div>
 
                                     <div className="flex flex-col items-start mb-8 pb-6 gap-2">
