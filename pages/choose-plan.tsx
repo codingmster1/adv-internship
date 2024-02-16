@@ -30,11 +30,11 @@ export default function Plan() {
             return;
         }
         if (chosenPremium === 0) {
-            const priceID = "price_1OjDL4I0mP7aWX5Pk2kZiWds";
+            const priceID = "price_1OkX3bI0mP7aWX5PCw5S9wRS";
             const getCheckoutURL = await getCheckoutUrl(app, priceID);
             router.push(getCheckoutURL);
         } else {
-            const priceID = "price_1OjBtuI0mP7aWX5PvpmF7p2h";
+            const priceID = "price_1OkX5eI0mP7aWX5Ph52R4pqu";
             const getCheckoutURL = await getCheckoutUrl(app, priceID);
             router.push(getCheckoutURL);
         }

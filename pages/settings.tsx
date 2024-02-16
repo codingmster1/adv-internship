@@ -9,6 +9,7 @@ import { getPortalUrl } from "stripePayment";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { premiumType } from "@/premiumType";
 
 export default function Settings() {
     const [skelLoad, setSkelLoad] = useState<boolean>(false);
@@ -17,6 +18,8 @@ export default function Settings() {
     const user = useSelector((state: any) => state.user);
     const router = useRouter();
     const app = initFirebase();
+    const subscription = premiumType(app);
+    const premiumStatusName = subscription.subscriptionName;
 
     function handleSignIn() {
         dispatch(openLoginModal());
@@ -85,7 +88,7 @@ export default function Settings() {
                                         </div>
 
                                         {isPremium ? (
-                                            <div className="text-[#032b41]">Premium</div>
+                                            <div className="text-[#032b41]">{premiumStatusName}</div>
                                         ) : (
                                             <>
                                                 <div className="text-[#032b41]">Basic</div>
