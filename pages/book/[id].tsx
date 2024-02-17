@@ -12,6 +12,11 @@ import { BiBulb } from "react-icons/bi";
 import { BsBookmark, BsMic } from "react-icons/bs";
 import { VscBook } from "react-icons/vsc";
 import { useDispatch, useSelector } from "react-redux";
+import { getPremiumStatus } from "@/checkStatus";
+import { auth, initFirebase } from "@/firebase";
+import { setUser } from "@/redux/userSlice";
+
+
 
 const formatTime = (time: number) => {
     if (time && !isNaN(time)) {
@@ -24,20 +29,30 @@ const formatTime = (time: number) => {
     return "00:00";
 };
 
+
+
 export default function Id() {
     const [book, setBook] = useState<BookObject>();
     const [skelLoad, setSkelLoad] = useState<boolean>(false);
     const [duration, setDuration] = useState(0);
-
+    const [isPremium, setIsPremium] = useState();
     const router = useRouter();
     const { id } = router.query;
+    const app = initFirebase();
+
 
     const user = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
 
+
+
     function handlePlay() {
         if (user.email === null) {
             dispatch(openLoginModal());
+            return;
+        }
+        if (user.premium === true) {
+            router.push(`/player/${id}`);
             return;
         }
         if (user.premium === true || book?.subscriptionRequired !== true) {

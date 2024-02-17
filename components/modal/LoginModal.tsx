@@ -1,22 +1,25 @@
-import { auth } from "@/firebase";
+import { auth, initFirebase } from "@/firebase";
 import { closeLoginModal, openLoginModal, openSignupModal } from "@/redux/modalSlice";
 import Modal from "@mui/material/Modal"
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react"
+import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { useEffect, useState } from "react"
 import { BiSolidUser } from "react-icons/bi"
 import { FiX } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import SignupModal from "./SignupModal";
+import { setUser } from "@/redux/userSlice";
+import { getPremiumStatus } from "@/checkStatus";
 
 export default function LoginModal() {
     const isOpen = useSelector((state: any) => state.modal.loginModal)
     const dispatch = useDispatch()
+
     //console.log(isOpen)
 
-
+    const app = initFirebase();
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
+    const user = useSelector((state: any) => state.user);
 
     async function handleSignIn() {
         await signInWithEmailAndPassword(auth, email, password)
@@ -27,6 +30,23 @@ export default function LoginModal() {
         await signInWithEmailAndPassword(auth, "guest0987@gmail.com", "1234567")
         dispatch(closeLoginModal())
     }
+
+
+    useEffect(() => {
+        const checkPremium = async () => {
+            const newPremiumStatus = auth.currentUser
+                ? await getPremiumStatus(app)
+                : false;
+            dispatch(
+                setUser({
+                    email: user.email,
+                    uid: user.uid,
+                    premium: newPremiumStatus,
+                })
+            );
+        };
+        checkPremium();
+    }, []);
 
 
     return (

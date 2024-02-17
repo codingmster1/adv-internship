@@ -5,18 +5,25 @@ import { BiSolidUser } from "react-icons/bi"
 import { FiX } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/firebase";
+import { auth, initFirebase } from "@/firebase";
 import { setUser } from "@/redux/userSlice";
+import { getPremiumStatus } from "@/checkStatus";
+import { useRouter } from "next/router";
+
 
 export default function SignupModal() {
 
 
     const isOpen = useSelector((state: any) => state.modal.signupModal)
     const dispatch = useDispatch()
-    //console.log(isOpen)
 
+    const router = useRouter();
+    //console.log(isOpen)
+    const [signup, setSignup] = useState(false);
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const app = initFirebase();
+    const user = useSelector((state: any) => state.user);
 
     async function handleSignUp() {
         const userCredentials = await createUserWithEmailAndPassword(
@@ -26,6 +33,7 @@ export default function SignupModal() {
         )
         dispatch(closeSignupModal())
     }
+
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -43,6 +51,7 @@ export default function SignupModal() {
         return unsubscribe;
 
     }, [])
+
 
 
     return (
