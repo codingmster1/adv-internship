@@ -44,6 +44,22 @@ export default function Id() {
     const user = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
 
+    /*function handleRead() {
+        if (user.email === null) {
+            dispatch(openLoginModal());
+            return;
+        }
+        if (user.premium === true) {
+            router.push(`/book/${id}`);
+            return;
+        }
+        if (user.premium === true || book?.subscriptionRequired !== true) {
+            router.push(`/book/${id}`);
+        } else {
+            router.push(`/choose-plan`);
+        }
+
+    }*/
 
 
     function handlePlay() {
