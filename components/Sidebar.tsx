@@ -66,7 +66,7 @@ export default function Sidebar() {
                     </div>
                     <div>Highlights</div>
                 </a>
-                <a className="flex items-center h-14 text-[#032b41] mb-2 cursor-not-allowed">
+                <a className="flex items-center h-14 text-[#032b41] mb-16 cursor-not-allowed">
                     <div className="bg-transparent w-[5px] h-full mr-4" />
                     <div className="icon--scaled flex items-center justify-center mr-2">
                         <AiOutlineSearch />
