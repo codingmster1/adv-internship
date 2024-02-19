@@ -67,10 +67,6 @@ export default function Id() {
             dispatch(openLoginModal());
             return;
         }
-        if (user.premium === true) {
-            router.push(`/player/${id}`);
-            return;
-        }
         if (user.premium === true || book?.subscriptionRequired !== true) {
             router.push(`/player/${id}`);
         } else {
